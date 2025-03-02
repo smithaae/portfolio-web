@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: jasmitha-portfolio
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: NODE_OPTIONS=--max_old_space_size=4096 node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_OPTIONS
+        value: --max_old_space_size=4096
+    autoDeploy: true
